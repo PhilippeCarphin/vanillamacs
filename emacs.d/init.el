@@ -19,6 +19,15 @@
 (global-set-key (kbd "C-x b") 'helm-buffers-list)
 (global-set-key (kbd "M-x") 'helm-M-x)
 
+;;; Org mode
+(require 'org-bullets)
+(add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
+(require 'htmlize)
+;;; This is for xdg-open to work when doing 'C-c C-e h o'
+;;; ref : https://askubuntu.com/questions/646631/emacs-doesnot-work-with-xdg-open
+(setq process-connection-type nil)
+
+
 
 ;;; Scroll behavior
 (setq scroll-step 1) ;; instead of the default behavior of jumping
