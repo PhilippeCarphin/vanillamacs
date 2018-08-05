@@ -9,6 +9,11 @@
 ;;; detract from their original emacs functions as prefixes
 ;; (cua-mode 1)
 
+;;; Useful recent files package
+;;; Use =recentf-open-files=
+(require 'recentf)
+(recentf-mode 1)
+
 
 ;;; Scroll behavior
 (setq scroll-step 1) ;; instead of the default behavior of jumping
