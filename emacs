@@ -4,6 +4,10 @@
 
 (load-file "~/.emacs.d/my-functions.el")
 
+;;; First configuration: Scroll behavior
+(setq scroll-step 1) ;; instead of the default behavior of jumping
+(setq-default scroll-margin 10) ;; Prevent the cursor from getting too close to the edges
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Extra things that are not part of vanillamacs
 ;; Stuff to make my life easier and that custom-set stuff
