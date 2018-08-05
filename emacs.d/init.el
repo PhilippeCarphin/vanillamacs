@@ -4,14 +4,33 @@
 
 (load-file "~/.emacs.d/my-functions.el")
 
-;;; First configuration: Scroll behavior
-(setq scroll-step 1) ;; instead of the default behavior of jumping
-(setq-default scroll-margin 10) ;; Prevent the cursor from getting too close to the edges
-
 ;;; Optional : Give classic C-{z|x|c|v} behavior.
 ;;; (C-c and C-x are only active while text is selected so it doesn't
 ;;; detract from their original emacs functions as prefixes
 ;; (cua-mode 1)
+
+
+;;; Scroll behavior
+(setq scroll-step 1) ;; instead of the default behavior of jumping
+(setq-default scroll-margin 10) ;; Prevent the cursor from getting too close to the edges
+;;; A set of miscellaneous configurations
+(electric-pair-mode 1)
+;;; make typing delete/overwrites selected text
+(delete-selection-mode 1)
+;;; make cursor movement stop in between camelCase words.
+(global-subword-mode 1)
+;;; auto insert closing bracket
+(electric-pair-mode 1)
+;;; turn on highlighting current line
+(global-hl-line-mode 1)
+;;; turn on bracket match highlight
+(show-paren-mode 1)
+;;; remember cursor position, for emacs 25.1 or later
+(save-place-mode 1)
+;;; Turn on line number mode
+(display-line-numbers-mode)
+;;; Column number in modeline
+(column-number-mode 1)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Extra things that are not part of vanillamacs
