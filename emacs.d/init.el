@@ -26,6 +26,8 @@
 ;;; This is for xdg-open to work when doing 'C-c C-e h o'
 ;;; ref : https://askubuntu.com/questions/646631/emacs-doesnot-work-with-xdg-open
 (setq process-connection-type nil)
+;;; Recenter screen when pressing shift-tab (worth it))
+(advice-add 'org-global-cycle :after 'recenter)
 
 
 
