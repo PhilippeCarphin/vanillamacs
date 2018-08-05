@@ -32,6 +32,8 @@
 ;;; Scroll behavior
 (setq scroll-step 1) ;; instead of the default behavior of jumping
 (setq-default scroll-margin 10) ;; Prevent the cursor from getting too close to the edges
+;;; Set startup theme
+(load-theme 'deeper-blue)
 ;;; A set of miscellaneous configurations
 (electric-pair-mode 1)
 ;;; make typing delete/overwrites selected text
