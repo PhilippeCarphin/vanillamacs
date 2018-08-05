@@ -8,6 +8,11 @@
 (setq scroll-step 1) ;; instead of the default behavior of jumping
 (setq-default scroll-margin 10) ;; Prevent the cursor from getting too close to the edges
 
+;;; Optional : Give classic C-{z|x|c|v} behavior.
+;;; (C-c and C-x are only active while text is selected so it doesn't
+;;; detract from their original emacs functions as prefixes
+;; (cua-mode 1)
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Extra things that are not part of vanillamacs
 ;; Stuff to make my life easier and that custom-set stuff
