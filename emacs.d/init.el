@@ -9,10 +9,15 @@
 ;;; detract from their original emacs functions as prefixes
 ;; (cua-mode 1)
 
-;;; Useful recent files package
-;;; Use =recentf-open-files=
-(require 'recentf)
-(recentf-mode 1)
+;;; Helm
+(require 'helm-config)
+;;; This remaps some regular functions to their helm equivalent
+(helm-mode 1)
+;;; And here are a couple more
+(global-set-key (kbd "C-x C-f") 'helm-find-files)
+(global-set-key (kbd "C-x f") 'helm-recentf)
+(global-set-key (kbd "C-x b") 'helm-buffers-list)
+(global-set-key (kbd "M-x") 'helm-M-x)
 
 
 ;;; Scroll behavior
@@ -49,7 +54,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(package-selected-packages (quote (evil))))
+ '(package-selected-packages (quote (helm evil))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
