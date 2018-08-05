@@ -1,0 +1,5 @@
+# source               my_file
+$HOME/.emacs           emacs
+$HOME/.emacs.d         emacs.d
+$HOME/.spacemacs       spacemacs
+$HOME/.spacemacs.d     spacemacs.d
