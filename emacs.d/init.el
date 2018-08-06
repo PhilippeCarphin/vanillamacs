@@ -7,6 +7,7 @@
 ;; M-x RET package-install RET org-bullets RET
 ;; M-x RET package-install RET htmlize RET
 ;; M-x RET package-install RET helm RET
+;; M-x RET package-install RET evil RET
 (load-theme 'deeper-blue)
 
 ;;; The bell ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -53,6 +54,11 @@
 ;;; Ctrl-{Z|X|C|V} like in windows (C-c and C-x still work the same when no text
 ;;; is selected.
 (cua-mode 1)
+
+
+;;; Enable evil-mode
+(require 'evil)
+(evil-mode 1)
 
 ;;; Misc Configs ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; Scroll behavior
