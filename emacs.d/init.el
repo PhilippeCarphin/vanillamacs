@@ -1,5 +1,9 @@
 (require 'package)
 (add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/"))
+;; Added this so that the package magit could be found
+;; ref https://stackoverflow.com/a/24836870/5795941
+(add-to-list 'package-archives '("melpa-stable" . "http://stable.melpa.org/packages/") t)
+(package-refresh-contents)
 (package-initialize)
 
 (load-file "~/.emacs.d/my-functions.el")
@@ -34,6 +38,12 @@
   (interactive)
   (helm-find-files-1 "~/Dropbox/Notes/Notes_BUCKET/"))
 
+;;; The magit package and some keybindings suggested by the documentation
+;;; Ref https://magit.vc/manual/magit/Getting-Started.html#Getting-Started
+(require 'magit)
+(global-set-key (kbd "C-x g") 'magit-status)
+(global-set-key (kbd "C-x M-g") 'magit-dispatch-popup)
+(setq vc-follow-symlinks t)
 
 
 ;;; Scroll behavior
@@ -72,7 +82,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(package-selected-packages (quote (helm evil))))
+ '(package-selected-packages (quote (magit helm evil))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
