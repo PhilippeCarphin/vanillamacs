@@ -1,3 +1,4 @@
+;;; Configuring and initializing package system ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (require 'package)
 (add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/"))
 ;; Added this so that the package magit could be found
@@ -6,14 +7,15 @@
 (package-refresh-contents)
 (package-initialize)
 
+;;; Loading external files ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (load-file "~/.emacs.d/my-functions.el")
 
-;;; Optional : Give classic C-{z|x|c|v} behavior.
+;;; Optional : Give classic C-{z|x|c|v} behavior. ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; (C-c and C-x are only active while text is selected so it doesn't
 ;;; detract from their original emacs functions as prefixes
 ;; (cua-mode 1)
 
-;;; Helm
+;;; Helm ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (require 'helm-config)
 ;;; This remaps some regular functions to their helm equivalent
 (helm-mode 1)
@@ -23,7 +25,7 @@
 (global-set-key (kbd "C-x b") 'helm-buffers-list)
 (global-set-key (kbd "M-x") 'helm-M-x)
 
-;;; Org mode
+;;; Org mode ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (require 'org-bullets)
 (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
 (require 'htmlize)
@@ -38,6 +40,7 @@
   (interactive)
   (helm-find-files-1 "~/Dropbox/Notes/Notes_BUCKET/"))
 
+;;; Magit ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; The magit package and some keybindings suggested by the documentation
 ;;; Ref https://magit.vc/manual/magit/Getting-Started.html#Getting-Started
 (require 'magit)
@@ -46,6 +49,7 @@
 (setq vc-follow-symlinks t)
 
 
+;;; Misc Configs ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; Scroll behavior
 (setq scroll-step 1) ;; instead of the default behavior of jumping
 (setq-default scroll-margin 10) ;; Prevent the cursor from getting too close to the edges
