@@ -1,26 +1,20 @@
 ;;; Configuring and initializing package system ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (require 'package)
 (add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/"))
-;; Added this so that the package magit could be found
-;; ref https://stackoverflow.com/a/24836870/5795941
-(add-to-list 'package-archives '("melpa-stable" . "http://stable.melpa.org/packages/") t)
 (package-refresh-contents)
 (package-initialize)
+;; You must run these commands the first time
+;; M-x RET package-install RET org-bullets RET
+;; M-x RET package-install RET htmlize RET
+;; M-x RET package-install RET helm RET
+(load-theme 'deeper-blue)
 
 ;;; The bell ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; the bell is REALLY annoying but I suggest leaving it on at least for the
 ;;; first day to get a sense of when you need to press C-g.  Then turn it off
 ;;; forever with this:
-;; (setq ring-bell-function 'ignore) ;; Turn the bell off
-(setq ring-bell-function 'nil) ;; leave the bell on
-
-;;; Loading external files ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-(load-file "~/.emacs.d/my-functions.el")
-
-;;; Optional : Give classic C-{z|x|c|v} behavior. ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;; (C-c and C-x are only active while text is selected so it doesn't
-;;; detract from their original emacs functions as prefixes
-;; (cua-mode 1)
+(setq ring-bell-function 'ignore) ;; Turn the bell off
+;; (setq ring-bell-function 'nil) ;; leave the bell on
 
 ;;; Helm ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (require 'helm-config)
@@ -56,21 +50,14 @@
 ;;; Include exporting to markdown
 (require 'ox-md)
 
-;;; Magit ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;; The magit package and some keybindings suggested by the documentation
-;;; Ref https://magit.vc/manual/magit/Getting-Started.html#Getting-Started
-(require 'magit)
-(global-set-key (kbd "C-x g") 'magit-status)
-(global-set-key (kbd "C-x M-g") 'magit-dispatch-popup)
-(setq vc-follow-symlinks t)
-
+;;; Ctrl-{Z|X|C|V} like in windows (C-c and C-x still work the same when no text
+;;; is selected.
+(cua-mode 1)
 
 ;;; Misc Configs ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; Scroll behavior
 (setq scroll-step 1) ;; instead of the default behavior of jumping
 (setq-default scroll-margin 10) ;; Prevent the cursor from getting too close to the edges
-;;; Set startup theme
-(load-theme 'deeper-blue)
 ;;; A set of miscellaneous configurations
 (electric-pair-mode 1)
 ;;; make typing delete/overwrites selected text
@@ -89,23 +76,3 @@
 (display-line-numbers-mode)
 ;;; Column number in modeline
 (column-number-mode 1)
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Extra things that are not part of vanillamacs
-;; Stuff to make my life easier and that custom-set stuff
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-(load-file "~/.emacs.d/extra-stuff.el")
-
-;; Stuff added by Custom.  First happened when I ran =package-install RET evil RET=
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(package-selected-packages (quote (magit helm evil))))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )
