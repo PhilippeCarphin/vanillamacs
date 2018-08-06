@@ -39,6 +39,11 @@
   "Open helm-find-files in a the notes directory"
   (interactive)
   (helm-find-files-1 "~/Dropbox/Notes/Notes_BUCKET/"))
+;;; activate Babel languages
+(org-babel-do-load-languages
+ 'org-babel-load-languages
+ '((shell . t)
+   (python . t)))
 
 ;;; Magit ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; The magit package and some keybindings suggested by the documentation
