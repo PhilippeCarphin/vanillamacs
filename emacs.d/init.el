@@ -7,6 +7,13 @@
 (package-refresh-contents)
 (package-initialize)
 
+;;; The bell ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;; the bell is REALLY annoying but I suggest leaving it on at least for the
+;;; first day to get a sense of when you need to press C-g.  Then turn it off
+;;; forever with this:
+;; (setq ring-bell-function 'ignore) ;; Turn the bell off
+(setq ring-bell-function 'nil) ;; leave the bell on
+
 ;;; Loading external files ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (load-file "~/.emacs.d/my-functions.el")
 
