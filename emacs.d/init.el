@@ -44,6 +44,10 @@
  'org-babel-load-languages
  '((shell . t)
    (python . t)))
+;;; Include exporting to man format
+(require 'ox-man)
+;;; Include exporting to markdown
+(require 'ox-md)
 
 ;;; Magit ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; The magit package and some keybindings suggested by the documentation
