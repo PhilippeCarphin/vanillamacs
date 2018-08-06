@@ -28,6 +28,11 @@
 (setq process-connection-type nil)
 ;;; Recenter screen when pressing shift-tab (worth it))
 (advice-add 'org-global-cycle :after 'recenter)
+;;; Define the command 'notes' to open helm-find-files in the notes directory
+(defun notes ()
+  "Open helm-find-files in a the notes directory"
+  (interactive)
+  (helm-find-files-1 "~/Dropbox/Notes/Notes_BUCKET/"))
 
 
 
