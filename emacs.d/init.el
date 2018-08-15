@@ -22,15 +22,15 @@
 ;;; detract from their original emacs functions as prefixes
 ;; (cua-mode 1)
 
-;;; Helm ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-(require 'helm-config)
+;;; Helm ;; REQUIRES EMACS 24.4 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; (require 'helm-config)
 ;;; This remaps some regular functions to their helm equivalent
-(helm-mode 1)
+;; (helm-mode 1)
 ;;; And here are a couple more
-(global-set-key (kbd "C-x C-f") 'helm-find-files)
-(global-set-key (kbd "C-x f") 'helm-recentf)
-(global-set-key (kbd "C-x b") 'helm-buffers-list)
-(global-set-key (kbd "M-x") 'helm-M-x)
+;; (global-set-key (kbd "C-x C-f") 'helm-find-files)
+;; (global-set-key (kbd "C-x f") 'helm-recentf)
+;; (global-set-key (kbd "C-x b") 'helm-buffers-list)
+;; (global-set-key (kbd "M-x") 'helm-M-x)
 
 ;;; Org mode ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (require 'org-bullets)
@@ -59,10 +59,10 @@
 ;;; Magit ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; The magit package and some keybindings suggested by the documentation
 ;;; Ref https://magit.vc/manual/magit/Getting-Started.html#Getting-Started
-(require 'magit)
-(global-set-key (kbd "C-x g") 'magit-status)
-(global-set-key (kbd "C-x M-g") 'magit-dispatch-popup)
-(setq vc-follow-symlinks t)
+;; (require 'magit)
+;; (global-set-key (kbd "C-x g") 'magit-status)
+;; (global-set-key (kbd "C-x M-g") 'magit-dispatch-popup)
+;; (setq vc-follow-symlinks t)
 
 
 ;;; Misc Configs ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
